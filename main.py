@@ -99,7 +99,7 @@ def webhook():
         processed_messages.add(message_id)
         # 只保留最近1000条
         if len(processed_messages) > 1000:
-            processed_messages.pop()
+            processed_messages.clear()
         
         # 解析消息内容
         msg_type = message.get("message_type")
